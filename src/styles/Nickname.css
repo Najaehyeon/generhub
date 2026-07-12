@@ -1,0 +1,300 @@
+.Nickname {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+/* 메인 단일 블록 카드 UI */
+.nickname-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e7;
+    border-radius: 24px;
+    padding: 40px 32px; /* 패딩을 조절해 내부 가로폭을 넓힘 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nickname-intro {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.nickname-icon {
+    width: 72px; /* 아이콘 확대 */
+    height: 72px;
+    margin-bottom: 16px;
+}
+
+.nickname-intro h2 {
+    font-size: 28px; /* 타이틀 확대 */
+    font-weight: 800;
+    color: #1d1d1f;
+    margin: 0 0 10px 0;
+}
+
+.nickname-intro p {
+    font-size: 17px; /* 가독성을 위한 인트로 확대 */
+    color: #515154;
+    margin: 0;
+}
+
+/* 설정 영역 - 전체 가로 폭을 꽉 채우도록 설정 */
+.settings-wrapper {
+    width: 100%;
+    max-width: 720px; /* 500px에서 720px로 확장하여 시원하게 채움 */
+    margin-bottom: 32px;
+}
+
+.setting-section {
+    margin-bottom: 28px;
+    width: 100%;
+}
+
+.section-label {
+    display: block;
+    font-size: 17px; /* 폰트 확대 */
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+}
+
+/* 애플 스타일 대형 세그먼트 컨트롤 */
+.segmented-control {
+    display: flex;
+    background-color: #f5f5f7;
+    padding: 5px;
+    border-radius: 12px;
+    gap: 4px;
+}
+
+.segmented-control button {
+    flex: 1;
+    border: none;
+    background: none;
+    padding: 14px 0; /* 버튼 상하 패딩 확대 */
+    font-size: 16px;  /* 폰트 확대 */
+    font-weight: 600;
+    color: #515154;
+    cursor: pointer;
+    border-radius: 9px;
+    transition: all 0.15s ease;
+}
+
+.segmented-control button.active {
+    background-color: #ffffff;
+    color: #0071e3; /* 가독성 좋은 파란색 강조 */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    font-weight: 700;
+}
+
+/* 토글 리스트 대형화 */
+.toggle-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toggle-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px; 
+    font-weight: 500;
+    color: #1d1d1f;
+    border-radius: 12px;
+    background-color: #ffffff;
+    border: 2px solid #f5f5f7;
+    transition: border-color 0.2s;
+    
+    /* [추가] div에 직접 onClick을 주는 대신, 내부의 label이 전체 영역을 차지하게 하거나 
+       포인터 커서를 주어 누를 수 있는 영역임을 명확히 인지시킵니다. */
+    cursor: pointer; 
+    position: relative;
+}
+
+/* 글자 영역 스타일 */
+.toggle-text {
+    flex: 1;
+    padding: 16px 0 16px 20px; /* 여백을 글자 영역에 주어 클릭 범위를 넓힙니다 */
+}
+
+.switch-wrapper {
+    padding: 16px 20px 16px 0;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-item input[type="checkbox"] {
+    display: none;
+}
+
+/* 스위치 크기도 시인성 향상을 위해 더 크게 세팅 */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 30px;
+    background-color: #e5e5ea;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.switch::after {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    top: 2px;
+    left: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: left 0.2s;
+}
+
+.toggle-item input[type="checkbox"]:checked + .switch {
+    background-color: #34c759;
+}
+
+.toggle-item input[type="checkbox"]:checked + .switch::after {
+    left: 24px;
+}
+
+/* 입력창 크기 시원하게 확대 */
+.char-input {
+    width: 100%;
+    padding: 16px; 
+    border: 2px solid #d2d2d7; /* 선 두께 강화 */
+    border-radius: 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.char-input:focus {
+    border-color: #0071e3;
+}
+
+/* 필수 포함 글자 위치 설정 칸 크기 확대 */
+.position-selector {
+    margin-top: 16px;
+    background: #f5f5f7;
+    padding: 18px;
+    border-radius: 12px;
+}
+
+.sub-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #515154;
+    margin-bottom: 12px;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 15px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    color: #1d1d1f;
+    font-weight: 600;
+}
+
+/* 라디오 순정 인풋 크기도 약간 보완 */
+.radio-group input[type="radio"] {
+    width: 18px;
+    height: 18px;
+}
+
+/* 결과창 영역 - 극대화하여 공간을 가득 채움 */
+.display-area {
+    width: 100%;
+    max-width: 720px;
+    min-height: 140px; /* 높이를 키워서 존재감 확보 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f7;
+    border-radius: 16px;
+    margin-bottom: 28px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.result-box {
+    text-align: center;
+}
+
+.result-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #86868b;
+    background: #ffffff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border: 1px solid #e5e5e7;
+}
+
+.nickname-display {
+    font-size: 44px; /* 눈에 번쩍 뜨이는 아주 큰 폰트 크기 */
+    font-weight: 800;
+    color: #0071e3;
+    letter-spacing: -1px;
+    margin: 0;
+    animation: textPop 0.25s ease-out;
+}
+
+.placeholder-text {
+    font-size: 17px;
+    color: #86868b;
+    text-align: center;
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+/* 하단 최종 완료형 생성 버튼 */
+.action-btn {
+    width: 100%;
+    max-width: 720px;
+    background-color: #0071e3;
+    color: white;
+    border: none;
+    padding: 18px 0; /* 위아래로 더 통통하고 누르기 쉽게 고침 */
+    border-radius: 16px;
+    font-size: 20px; /* 버튼 글자 크기 확대 */
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0, 113, 227, 0.25);
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: #0077ed;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 113, 227, 0.35);
+}
+
+.action-btn:active {
+    transform: translateY(1px);
+}
+
+@keyframes textPop {
+    0% { transform: scale(0.96); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}

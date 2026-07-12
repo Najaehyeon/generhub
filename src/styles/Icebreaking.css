@@ -1,0 +1,65 @@
+.Icebreaking {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 20px;
+}
+
+.generator-container {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e7;
+    border-radius: 24px;
+    padding: 40px 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 24px;
+    color: #1d1d1d;
+}
+
+.topic {
+    color: #86868b;
+    font-size: 32px;
+    padding: 0 24px;
+    margin: 48px 0 64px;
+    text-align: center;
+    word-break: keep-all;
+    
+    /* 변화를 부드럽게 만들어줄 트랜지션 선언 (Apple 이징 curve) */
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 기본/도착 상태: 제자리에 선명하게 노출 */
+.topic.enter {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 사라질 때 상태: 아래로 떨어지며 흐려짐 */
+.topic.exit {
+    opacity: 0;
+    transform: translateY(20px);
+    /* 위에서 아래로 새로 내려오기 위해 트랜지션을 잠깐 끔 */
+    transition: opacity 0.2s ease-in, transform 0.2s ease-in; 
+}
+
+.generate-btn {
+    width: 100%;
+    background: linear-gradient(180deg, #0077ed 0%, #0066cc 100%);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+}

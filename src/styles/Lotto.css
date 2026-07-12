@@ -1,0 +1,131 @@
+.Lotto {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 20px;
+}
+
+/* 메인 카드 컨테이너 */
+.lotto-card {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 24px;
+    padding: 40px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.lotto-intro {
+    margin-bottom: 36px;
+}
+
+.lotto-icon {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.lotto-intro h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin: 0 0 8px 0;
+}
+
+.lotto-intro p {
+    font-size: 15px;
+    color: #86868b;
+    margin: 0;
+}
+
+/* 로또 공 컨테이너 및 플레이스홀더 */
+.ball-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    min-height: 80px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.placeholder-text {
+    font-size: 16px;
+    color: #86868b;
+    font-weight: 500;
+}
+
+/* 로또 공 기본 스타일 */
+.lotto-ball {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 대역별 파스텔/소프트 톤 색상 (애플 감성에 맞춤) */
+.ball-yellow { background-color: #ffb64d; text-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+.ball-blue   { background-color: #5ac8fa; }
+.ball-red    { background-color: #ff453a; }
+.ball-gray   { background-color: #aeaeb2; }
+.ball-green  { background-color: #34c759; }
+
+/* 공이 나타날 때의 부드러운 애니메이션 */
+.pop-in {
+    animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 생성 버튼 스타일 */
+.generate-btn {
+    background-color: #0071e3;
+    color: #ffffff;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+}
+
+.generate-btn:hover {
+    background-color: #0077ed;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 113, 227, 0.4);
+}
+
+.generate-btn:active {
+    transform: translateY(1px);
+}
+
+.generate-btn:disabled {
+    background-color: #eaeaea;
+    color: #999999;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}

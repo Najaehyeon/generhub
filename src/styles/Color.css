@@ -1,0 +1,80 @@
+.Color {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 20px;
+}
+
+/* 제너레이터 전체 카드 컨테이너 */
+.generator-container {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e7;
+    border-radius: 24px;
+    padding: 40px 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 컬러가 보여지는 메인 칩 */
+.color-preview {
+    width: 100%;
+    height: 360px;
+    border-radius: 18px;
+    transition: background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* 부드러운 색상 전환 효과 */
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+/* 컬러 정보 및 복사 영역 */
+.color-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 16px 16px;
+    border-radius: 12px;
+    transition: background-color 0.2s;
+}
+
+.color-info:hover {
+    background-color: #f5f5f7; /* 애플 제품 페이지의 연회색 배경 */
+}
+
+.hex-code {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1d1d1f; /* 애플 서체 메인 컬러 */
+    letter-spacing: -0.5px;
+}
+
+.copy-badge {
+    font-size: 14px;
+    color: #86868b; /* 애플 서체 서브 컬러 */
+    font-weight: 500;
+}
+
+/* 생성 버튼 (애플 특유의 솔리드 시안 버튼 스타일) */
+.generate-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #007AFF; /* Apple Blue */
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.generate-btn:hover {
+    background-color: #0063CC;
+}
+
+.generate-btn:active {
+    transform: scale(0.98); /* 클릭 시 살짝 눌리는 인터랙션 */
+}
